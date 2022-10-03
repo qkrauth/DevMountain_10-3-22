@@ -22,6 +22,19 @@ const decodeFunction = (string) => {
             // shift the alphabet a few spots for each letter in the input string
         }
     }
-    return word;
+    return word
 }
 console.log(decodeFunction(""));
+
+////////// SOLUTION //////////
+
+function stringDecoder(code) {
+    let decipher = Number(code[0]);
+    let solution = "";
+    for (let i = 1; i < code.length; i++) {
+        let strValue = code[i].charCodeAt() + decipher
+        solution += String.fromCharCode(strValue)
+    }
+    return solution
+}
+console.log(stringDecoder("2fcjjm"));
